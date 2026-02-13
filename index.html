@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="logo.png">
+    <title>My CV - Nur Wahid</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-blue: #0d6efd;
+            --secondary-blue: #1e40af;
+            --light-blue: #e3f2fd;
+            --dark-blue: #0a58ca;
+        }
+        
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .cv-header {
+            background: url('ptiq.jpg') center/cover no-repeat;
+            color: white;
+            padding: 3rem 0;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+        
+        .cv-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(13, 110, 253, 0.8), rgba(30, 64, 175, 0.8));
+            z-index: 1;
+        }
+        
+        .cv-header .container {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .cv-header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .cv-header .subtitle {
+            font-size: 1.25rem;
+            opacity: 0.9;
+        }
+        
+        .contact-info {
+            background-color: white;
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .contact-info i {
+            color: var(--primary-blue);
+            margin-right: 0.5rem;
+            width: 20px;
+        }
+        
+        .section-card {
+            background-color: white;
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-left: 5px solid var(--primary-blue);
+        }
+        
+        .section-title {
+            color: var(--secondary-blue);
+            font-size: 1.75rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: var(--primary-blue);
+        }
+        
+        .experience-item, .education-item {
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        .experience-item:last-child, .education-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .job-title {
+            color: var(--secondary-blue);
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+        
+        .company-info {
+            color: #6c757d;
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+        
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+        
+        .skill-badge {
+            background-color: var(--light-blue);
+            color: var(--secondary-blue);
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            border: 1px solid var(--primary-blue);
+        }
+        
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .header-profile-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid rgba(255, 255, 255, 0.8);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            margin-bottom: 1rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .header-profile-img:hover {
+            transform: scale(1.05);
+        }
+        
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            margin: 0 0.5rem;
+            transition: color 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            color: var(--light-blue);
+        }
+        
+        @media (max-width: 768px) {
+            .cv-header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .cv-header {
+                padding: 2rem 0;
+            }
+            
+            .section-card {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="cv-header text-center">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <h1>Nur Wahid Aidil Nugroho</h1>
+                    <p class="subtitle">Mahasiswa Univesitas PTIQ Jakarta</p>
+                    <div class="social-links mt-3">
+                        <a href="https://github.com/nurwahidaidilnugroho"><i class="fab fa-github"></i></a>
+                        <a href="https://wa.me/6282363592374"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Particle Background -->
+    <div id="particles-js" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;"></div>
+
+    <div class="container">
+        <div class="row">
+            <!-- Left Column -->
+            <div class="col-lg-4">
+                <!-- Profile Image -->
+                <div class="text-center mb-4" data-aos="zoom-in" data-aos-delay="200">
+                    <img src="Nur_wahid.jpg" alt="Profile Picture" class="profile-image">
+                </div>
+                
+                <!-- Contact Information -->
+                <div class="contact-info" data-aos="fade-right" data-aos-delay="300">
+                    <h5 class="mb-3" style="color: var(--secondary-blue);"><i class="fas fa-address-card"></i> Contact Information</h5>
+                    <p><i class="fas fa-envelope"></i> wahidaidil2460@gmail.com</p>
+                    <p><i class="fas fa-phone"></i> +62 823-635-923-74</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Jl. Wibawa Mukti II No.129, RT.004/RW.006, Jatisari, Kec. Jatiasih, Kota Bks, Jawa Barat 17426</p>
+                    <p><a href="https://github.com/nurwahidaidilnugroho"><i class="fab fa-github"></i> nurwahidaidilnugroho</a></p>
+                </div>
+                
+                <!-- Skills Section -->
+                <div class="section-card" data-aos="fade-right" data-aos-delay="400">
+                    <h5 class="section-title"><i class="fas fa-code"></i> Skills</h5>
+                    <div class="skills-container">
+                        <span class="skill-badge">Programmer Analyst</span>
+                        <span class="skill-badge">Problem Solving</span>
+                        <span class="skill-badge">Full Stack Developer</span>
+                        <span class="skill-badge">Mengajar</span>
+                        <span class="skill-badge">Berkomunikasi yang Baik</span>
+                    </div>
+                </div>
+                
+                <!-- Languages Section -->
+                <div class="section-card" data-aos="fade-right" data-aos-delay="500">
+                    <h5 class="section-title"><i class="fas fa-language"></i> Bahasa</h5>
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between mb-1">
+                            <span class="fw-bold">Indonesia</span>
+                            <small class="text-muted">Kemampuan</small>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar bg-primary" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between mb-1">
+                            <span class="fw-bold">Arab</span>
+                            <small class="text-muted">Kemampuan</small>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar bg-info" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between mb-1">
+                            <span class="fw-bold">Inggris</span>
+                            <small class="text-muted">Kemampuan</small>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar bg-warning" role="progressbar" style="width: 15%" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Right Column -->
+            <div class="col-lg-8">
+                <!-- About Section -->
+                <div class="section-card" data-aos="fade-left" data-aos-delay="200">
+                    <h5 class="section-title"><i class="fas fa-user"></i> Tentang Saya</h5>
+                    <p class="text-muted">
+                        Saya, Nur Wahid Aidil Nugroho aktif sebagai Mahasiswa 
+                        dengan minat pada pengembangan Ilmu Al-Qur’an berbasis 
+                        Digital. Memiliki semangat belajar tinggi, terbiasa 
+                        bekerja dengan tim maupun mandiri, serta berkomitmen 
+                        untuk terus berkembang dan memberikan kontribusi positif.
+                    </p>
+                </div>
+                
+                <!-- Experience Section -->
+                <div class="section-card" data-aos="fade-left" data-aos-delay="300">
+                    <h5 class="section-title"><i class="fas fa-briefcase"></i> Pengalaman Organisasi</h5>
+                    
+                    <div class="experience-item">
+                        <h6 class="job-title">OPPA SMA Al-Husna</h6>
+                        <h6 class="job-title">Kader Pencak Silat SMA Al-Husna</h6>
+                        <h6 class="job-title">Anggota Pembina Pramuka SMA Al-Husna</h6>
+                        <h6 class="job-title">Anggota Lab-Kom SMA Al-Husna</h6>
+                        <br>
+                        <div class="company-info">
+                            <strong>SMA Plus Al-Husna</strong> | September 2021 - Februari 2022<br>
+                            <small class="text-muted">Medan, Sumatera Utara</small>
+                        </div>
+                    </div>
+                    
+                    <div class="experience-item">
+                        <h6 class="job-title">Tim Tashih Al-Qur’an Metode Yassir</h6>
+                        <br>
+                        <div class="company-info">
+                            <strong>Metode Yassir Laboratorium Al-Qur’an</strong> | Agustus 2024 - Agustus 2025<br>
+                            <small class="text-muted">Bekasi, Jawa Barat</small>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+                <!-- Education Section -->
+                <div class="section-card" data-aos="fade-left" data-aos-delay="400">
+                    <h5 class="section-title"><i class="fas fa-graduation-cap"></i> Pendidikan</h5>
+                    
+                    <div class="education-item">
+                        <h6 class="job-title">Pendidikan Dasar</h6>
+                        <div class="company-info">
+                            <strong>SDN 105392</strong><br>
+                            <small class="text-muted">2010 - 2016</small>
+                        </div>
+                    </div>
+                    
+                    <div class="education-item">
+                        <h6 class="job-title">Pendidikan Menengah Pertama</h6>
+                        <div class="company-info">
+                            <strong>Madrasaha Hifzil Qur'an Islamic Centre Sumatera Utara</strong><br>
+                            <small class="text-muted">2016 - 2019</small>
+                        </div>
+                    </div>
+                    
+                    <div class="education-item">
+                        <h6 class="job-title">Pendidikan Menengah Atas</h6>
+                        <div class="company-info">
+                            <strong>SMA Plus Al-Husna</strong><br>
+                            <small class="text-muted">2019 - 2022</small>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Prestasi Section -->
+                <div class="section-card" data-aos="fade-left" data-aos-delay="500">
+                    <h5 class="section-title"><i class="fas fa-trophy"></i> Prestasi</h5>
+                    
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <div class="card h-100 border-0 shadow-sm" data-aos="flip-right" data-aos-delay="700">
+                                <div class="card-body">
+                                    <h6 class="card-title" style="color: var(--secondary-blue);">Juara 1 MTQ Tingkat Kecamatan, cabang Tilawah</h6>
+                                    <p class="card-text text-muted small">
+                                        2017
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+                            <div class="card h-100 border-0 shadow-sm" data-aos="flip-left" data-aos-delay="600">
+                                <div class="card-body">
+                                    <h6 class="card-title" style="color: var(--secondary-blue);">Juara 1 Fighter, Tapak Suci antar Sekolah</h6>
+                                    <p class="card-text text-muted small">
+                                        2018
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6 mb-3">
+                            <div class="card h-100 border-0 shadow-sm" data-aos="flip-right" data-aos-delay="700">
+                                <div class="card-body">
+                                    <h6 class="card-title" style="color: var(--secondary-blue);">Juara 3 Seni, Tapak Suci antar Sekolah</h6>
+                                    <p class="card-text text-muted small">
+                                        2018
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+
+        // Typing effect for the main title
+        document.addEventListener('DOMContentLoaded', function() {
+            const title = document.querySelector('.cv-header h1');
+            const originalText = title.textContent;
+            title.textContent = '';
+            
+            let i = 0;
+            const typeWriter = () => {
+                if (i < originalText.length) {
+                    title.textContent += originalText.charAt(i);
+                    i++;
+                    setTimeout(typeWriter, 100);
+                }
+            };
+            
+            // Start typing effect after a short delay
+            setTimeout(typeWriter, 500);
+        });
+
+        // Particle background effect
+        document.addEventListener('DOMContentLoaded', function() {
+            particlesJS('particles-js', {
+                "particles": {
+                    "number": {
+                        "value": 80,
+                        "density": {
+                            "enable": true,
+                            "value_area": 800
+                        }
+                    },
+                    "color": {
+                        "value": "#0d6efd"
+                    },
+                    "shape": {
+                        "type": "circle",
+                        "stroke": {
+                            "width": 0,
+                            "color": "#000000"
+                        },
+                        "polygon": {
+                            "nb_sides": 5
+                        }
+                    },
+                    "opacity": {
+                        "value": 0.5,
+                        "random": false,
+                        "anim": {
+                            "enable": false,
+                            "speed": 1,
+                            "opacity_min": 0.1,
+                            "sync": false
+                        }
+                    },
+                    "size": {
+                        "value": 3,
+                        "random": true,
+                        "anim": {
+                            "enable": false,
+                            "speed": 40,
+                            "size_min": 0.1,
+                            "sync": false
+                        }
+                    },
+                    "line_linked": {
+                        "enable": true,
+                        "distance": 150,
+                        "color": "#0d6efd",
+                        "opacity": 0.4,
+                        "width": 1
+                    },
+                    "move": {
+                        "enable": true,
+                        "speed": 2,
+                        "direction": "none",
+                        "random": false,
+                        "straight": false,
+                        "out_mode": "out",
+                        "bounce": false,
+                        "attract": {
+                            "enable": false,
+                            "rotateX": 600,
+                            "rotateY": 1200
+                        }
+                    }
+                },
+                "interactivity": {
+                    "detect_on": "canvas",
+                    "events": {
+                        "onhover": {
+                            "enable": true,
+                            "mode": "repulse"
+                        },
+                        "onclick": {
+                            "enable": true,
+                            "mode": "push"
+                        },
+                        "resize": true
+                    },
+                    "modes": {
+                        "grab": {
+                            "distance": 400,
+                            "line_linked": {
+                                "opacity": 1
+                            }
+                        },
+                        "bubble": {
+                            "distance": 400,
+                            "size": 40,
+                            "duration": 2,
+                            "opacity": 8,
+                            "speed": 3
+                        },
+                        "repulse": {
+                            "distance": 200,
+                            "duration": 0.4
+                        },
+                        "push": {
+                            "particles_nb": 4
+                        },
+                        "remove": {
+                            "particles_nb": 2
+                        }
+                    }
+                },
+                "retina_detect": true
+            });
+        });
+
+        // Add hover effects to skill badges
+        document.addEventListener('DOMContentLoaded', function() {
+            const skillBadges = document.querySelectorAll('.skill-badge');
+            skillBadges.forEach(badge => {
+                badge.addEventListener('mouseenter', function() {
+                    this.style.transform = 'scale(1.1) rotate(2deg)';
+                    this.style.transition = 'all 0.3s ease';
+                });
+                
+                badge.addEventListener('mouseleave', function() {
+                    this.style.transform = 'scale(1) rotate(0deg)';
+                });
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.addEventListener('DOMContentLoaded', function() {
+            const links = document.querySelectorAll('a[href^="#"]');
+            links.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetSection = document.querySelector(targetId);
+                    if (targetSection) {
+                        targetSection.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+
+        // Add click animation to project cards
+        document.addEventListener('DOMContentLoaded', function() {
+            const projectCards = document.querySelectorAll('.card');
+            projectCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    this.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        this.style.transform = 'scale(1)';
+                    }, 150);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+</body>
+</html>
